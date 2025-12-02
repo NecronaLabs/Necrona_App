@@ -1,6 +1,6 @@
 # AI Chat Interface
 
-The heart of Luna402 is its intelligent chat interface, powered by our proprietary AI model trained on 72,000+ cryptocurrency tokens. This guide explains how the chat interface works and how to get the most out of your conversations with the AI oracle.
+The heart of Necrona is its intelligent chat interface, powered by our proprietary AI model trained on 72,000+ cryptocurrency tokens. This guide explains how the chat interface works and how to get the most out of your conversations with the AI oracle.
 
 ## Overview
 
@@ -15,7 +15,7 @@ The central chat area displays:
 - **Your Messages**: Shown on the right with a distinct background
 - **AI Responses**: Streamed in real-time on the left with markdown formatting
 - **Timestamps**: Track when messages were sent
-- **Loading Indicators**: "Luna402 is thinking..." while processing
+- **Loading Indicators**: "NEcrona is thinking..." while processing
 
 ### Message Input
 
@@ -439,4 +439,5 @@ If cooldown seems incorrect:
 
 ---
 
-**Ready to start chatting?** Visit [luna402.xyz](https://luna402.xyz) and ask your first question!
+
+
