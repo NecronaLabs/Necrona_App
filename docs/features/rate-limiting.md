@@ -1,6 +1,6 @@
 # Rate Limiting
 
-Luna402 implements a robust rate limiting system to prevent abuse and ensure fair usage across all users.
+Necrona implements a robust rate limiting system to prevent abuse and ensure fair usage across all users.
 
 ## Overview
 
@@ -133,7 +133,7 @@ useEffect(() => {
       another message.
     </span>
   ) : (
-    'Luna402 provides AI-generated insights. Always do your own research.'
+    'Necrona provides AI-generated insights. Always do your own research.'
   );
 }
 ```
@@ -329,4 +329,4 @@ Potential improvements:
 
 ---
 
-**Questions?** See [Common Issues](../troubleshooting/common-issues.md) or [join Discord](https://discord.gg/luna402).
+
