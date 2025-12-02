@@ -7,7 +7,8 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 /**
  * @title PaymentSplitter
  * @dev Splits incoming payments among multiple recipients based on shares
- * Useful for revenue sharing, team payments, and multi-party settlements
+ * Designed for NecronaLabs ($NECRONA) and x402-based revenue flows:
+ * useful for revenue sharing, team payments, and multi-party settlements.
  */
 contract PaymentSplitter is ReentrancyGuard {
 
