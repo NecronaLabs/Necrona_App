@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /**
  * @title PaymentStreaming
- * @dev Enables continuous payment flows over time for Luna402
+ * @dev Enables continuous payment flows over time for NecronaLabs ($NECRONA)
  * Useful for real-time compensation, per-second billing, and continuous service payments
  */
 contract PaymentStreaming is ReentrancyGuard {
@@ -261,7 +261,7 @@ contract PaymentStreaming is ReentrancyGuard {
     }
 
     /**
-     * @dev Extend a stream with additional deposit
+     * @dev Extend a stream with additional deposit (native)
      * @param streamId The stream identifier
      * @param additionalTime Additional seconds to extend the stream
      */
