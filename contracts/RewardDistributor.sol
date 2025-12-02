@@ -7,12 +7,12 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title RewardDistributor
- * @dev Distributes rewards to $LUNA holders and platform users
+ * @dev Distributes rewards to $NECRONA holders and platform users
  * Supports staking rewards, usage rewards, and referral bonuses
  */
 contract RewardDistributor is ReentrancyGuard, Ownable {
 
-    IERC20 public immutable lunaToken;
+    IERC20 public immutable necronaToken;
 
     struct StakeInfo {
         uint256 amount;
@@ -56,16 +56,16 @@ contract RewardDistributor is ReentrancyGuard, Ownable {
     event ReferralSet(address indexed user, address indexed referrer);
     event ReferralRewardAdded(address indexed referrer, uint256 amount);
 
-    constructor(address _lunaToken) Ownable(msg.sender) {
-        require(_lunaToken != address(0), "Invalid token");
-        lunaToken = IERC20(_lunaToken);
+    constructor(address _necronaToken) Ownable(msg.sender) {
+        require(_necronaToken != address(0), "Invalid token");
+        necronaToken = IERC20(_necronaToken);
 
         stakingPool.lastUpdateTime = block.timestamp;
         stakingPool.rewardRate = 1e15; // Initial rate: 0.001 tokens per second per staked token
     }
 
     /**
-     * @dev Stake $LUNA tokens to earn rewards
+     * @dev Stake $NECRONA tokens to earn rewards
      * @param amount Amount to stake
      */
     function stake(uint256 amount) external nonReentrant {
@@ -85,7 +85,7 @@ contract RewardDistributor is ReentrancyGuard, Ownable {
         }
 
         // Transfer tokens from user
-        require(lunaToken.transferFrom(msg.sender, address(this), amount), "Transfer failed");
+        require(necronaToken.transferFrom(msg.sender, address(this), amount), "Transfer failed");
 
         // Update stake info
         userStake.amount += amount;
@@ -97,7 +97,7 @@ contract RewardDistributor is ReentrancyGuard, Ownable {
     }
 
     /**
-     * @dev Unstake $LUNA tokens
+     * @dev Unstake $NECRONA tokens
      * @param amount Amount to unstake
      */
     function unstake(uint256 amount) external nonReentrant {
@@ -119,7 +119,7 @@ contract RewardDistributor is ReentrancyGuard, Ownable {
         totalStaked -= amount;
 
         // Transfer tokens back to user
-        require(lunaToken.transfer(msg.sender, amount), "Transfer failed");
+        require(necronaToken.transfer(msg.sender, amount), "Transfer failed");
 
         emit Unstaked(msg.sender, amount);
     }
@@ -261,7 +261,7 @@ contract RewardDistributor is ReentrancyGuard, Ownable {
      * @param amount Amount to add
      */
     function fundRewardPool(uint256 amount) external onlyOwner {
-        require(lunaToken.transferFrom(msg.sender, address(this), amount), "Transfer failed");
+        require(necronaToken.transferFrom(msg.sender, address(this), amount), "Transfer failed");
         stakingPool.totalRewards += amount;
     }
 
